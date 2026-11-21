@@ -34,9 +34,6 @@ def filtrar_por_estacion(lista_observaciones, estacion):
             resultado.append(dato)
 
     return resultado
-
-
-
 def resumir_temperaturas(lista_observaciones):
     cantidad = len(lista_observaciones)
 
@@ -67,3 +64,9 @@ def resumir_temperaturas(lista_observaciones):
         "maxima": maxima,
         "promedio": promedio
     }
+def hora_humedad(observaciones):
+    hora = 0 
+    for i in observaciones:
+        if i.horas_humedad_alta():
+            i =+1
+    return hora

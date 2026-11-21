@@ -17,7 +17,7 @@ class Observacion_Clase:
 
         if temperatura is None:
             raise ValueError("Falta la temperatura")
-
+    
         if humedad is None:
             raise ValueError("Falta la humedad")
 
@@ -30,6 +30,14 @@ class Observacion_Clase:
         if velocidad_viento < 0:
             raise ValueError("La velocidad del viento no puede ser negativa")
 
+        if self.temperatura < -20:
+            raise ValueError("es menor a -20")
+        
+    def horas_humedad_alta(self):
+        if self.humedad> 90:
+            return True
+        else:
+            return False
     def es_de_estacion(self, estacion):
         return self.estacion == estacion
 
@@ -44,6 +52,6 @@ class Observacion_Clase:
             return "fuerte"
         
     def mostrar_observacion(self):
-        return (f"{self.estacion} | {self.hora} h | {self.temperatura} °C | {self.humedad} % | {self.velocidad_viento}km/h ({self.intensidad_viento()})")
+        return (f"{self.estacion} | {self.hora} h | {self.temperatura} °C | {self.humedad} % | {self.velocidad_viento}km/h ({self.intensidad_viento()}) / {self.horas_humedad_alta()}")
 
     

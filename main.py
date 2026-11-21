@@ -15,19 +15,17 @@ def main():
 
     # Filtrar las observaciones de la estación elegida.
     de_la_estacion = consultar_clima.filtrar_por_estacion(observaciones, estacion)
-
-
+    horas = consultar_clima.hora_humedad(de_la_estacion)
     # Calcular el resumen de temperaturas.
-    resumen = consultar_clima.resumir_temperaturas(de_la_estacion)
-
+    resumen = consultar_clima.resumir_temperaturas(de_la_estacion) 
     minima = resumen["minima"]
     maxima = resumen["maxima"]
 
     print(estacion)
     print(f"Observaciones: {resumen['cantidad']}")
-
-    print(f"Temperatura mínima: {minima.temperatura} °C "f"a las {minima.hora} h (leve)")
-    print( f"Temperatura máxima: {maxima.temperatura} °C "f"a las {maxima.hora} h")
+    print(f"horas de humedad alta:  {horas}")
+    print(f"Temperatura mínima: {minima.temperatura} °C "f"a las {minima.hora} h ")
+    print(f"Temperatura máxima: {maxima.temperatura} °C "f"a las {maxima.hora} h")
     print(f"Temperatura promedio: {resumen['promedio']} °C")
     print()
 
