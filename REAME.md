@@ -1,4 +1,6 @@
 # Recuperatorio - Estaciones del SMN
+## alumno
+Leo Chambilla
 
 ## Descripción
 
@@ -52,7 +54,3 @@ Para ejecutar las pruebas:
 ```bash
 python -m pytest -v
 ```
-
-## Autor
-
-Leo Chambilla
